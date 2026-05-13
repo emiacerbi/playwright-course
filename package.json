@@ -1,0 +1,22 @@
+{
+  "name": "playwright-practice",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Playwright learning repo — exercises organized by topic.",
+  "scripts": {
+    "dev": "serve app -l 1337 --no-clipboard",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:01": "playwright test tests/01-locators",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen http://localhost:1337"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^22.10.0",
+    "serve": "^14.2.4",
+    "typescript": "^5.7.0"
+  }
+}
