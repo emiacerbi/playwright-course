@@ -32,8 +32,12 @@ npm run test:01
 .
 ├── app/
 │   └── index.html
+├── pages/
+│   └── HomePage.ts
 ├── tests/
-│   └── 01-locators/
+│   ├── 01-locators/
+│   ├── 02-function/
+│   └── 03-pom/
 ├── .github/workflows/
 │   └── pages.yml
 ├── playwright.config.ts
@@ -47,7 +51,7 @@ npm run test:01
 | -- | ---------------------------------- | --------------------- | ------ |
 | 1  | Locators                           | `tests/01-locators`   | done |
 | 2  | Writing & debugging tests          | `tests/02-debugging`  | done   |
-| 3  | Page Object Model (POM)            | `tests/03-pom`        | todo   |
+| 3  | Page Object Model (POM)            | `tests/03-pom`        | done   |
 | 4  | Git workflow with tests            | repo-wide             | todo   |
 | 5  | API testing                        | `tests/05-api`        | todo   |
 | 6  | CI/CD integration                  | `.github/workflows`   | todo   |
@@ -68,3 +72,9 @@ npm run test:01
 - Then the test failed because I was having the text visible first, so the test program was clicking the button before checking, so it was not there, failing the test. I entered into 
 - `npm run test:ui`
 - And saw why it failed. After this, I added `display: none` as the initial style to the paragraph, making the test pass
+
+## Notes on third exercise
+
+- The key idea of POM: move locators and actions into a class (`pages/HomePage.ts`) so tests just call methods and read properties — no raw `page.getBy*` calls scattered across spec files.
+- The constructor receives the Playwright `Page` and stores it as a private field using TypeScript's shorthand (`private readonly page: Page`).
+- Locators are `get` properties (no `await` needed), actions are `async` methods.
