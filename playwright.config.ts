@@ -22,9 +22,9 @@ export default defineConfig({
     },
     {
       command: 'node app/api-server.js',
-      url: 'http://localhost:3000/ping',
+      url: 'http://localhost:1338/ping',
       reuseExistingServer: !process.env.CI,
-      timeout: 10_000,
+      timeout: 30_000,
     },
   ],
   projects: [
