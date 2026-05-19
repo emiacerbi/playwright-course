@@ -52,8 +52,8 @@ npm run test:01
 | 1  | Locators                           | `tests/01-locators`   | done |
 | 2  | Writing & debugging tests          | `tests/02-debugging`  | done   |
 | 3  | Page Object Model (POM)            | `tests/03-pom`        | done   |
-| 4  | Git workflow with tests            | repo-wide             | todo   |
-| 5  | API testing                        | `tests/05-api`        | todo   |
+| 4  | Git workflow with tests            | repo-wide             | done   |
+| 5  | API testing                        | `tests/05-api`        | done   |
 | 6  | CI/CD integration                  | `.github/workflows`   | todo   |
 | 7  | QA fundamentals (cases/suites/...) | `notes/QA-BASICS.md`  | todo   |
 

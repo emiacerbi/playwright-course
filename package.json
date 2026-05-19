@@ -5,6 +5,7 @@
   "description": "Playwright learning repo — exercises organized by topic.",
   "scripts": {
     "dev": "serve app -l 1337 --no-clipboard",
+    "dev:api": "node app/api-server.js",
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",

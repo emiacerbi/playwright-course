@@ -13,12 +13,20 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
   },
-  webServer: {
-    command: 'npx serve app -l 1337 --no-clipboard',
-    url: 'http://localhost:1337',
-    reuseExistingServer: !process.env.CI,
-    timeout: 30_000,
-  },
+  webServer: [
+    {
+      command: 'npx serve app -l 1337 --no-clipboard',
+      url: 'http://localhost:1337',
+      reuseExistingServer: !process.env.CI,
+      timeout: 30_000,
+    },
+    {
+      command: 'node app/api-server.js',
+      url: 'http://localhost:3000/ping',
+      reuseExistingServer: !process.env.CI,
+      timeout: 10_000,
+    },
+  ],
   projects: [
     { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
     { name: 'firefox', use: { ...devices['Desktop Firefox'] } },
