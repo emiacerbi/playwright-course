@@ -30,6 +30,17 @@ test('gallery post - click through all images and open each in full view', async
     await checkNextSlide(5);
 });
 
+
+
+test('comment thread - toggle comment thread and verify the results', async ({ page }) => {
+    await page.goto(POST);
+    await expect(page.locator('.text-neutral-content-strong.bg-neutral-background').first()).toBeVisible();
+    await page.locator('.text-neutral-content-strong.bg-neutral-background').first().click();
+    await expect(page.locator('.relative > shreddit-comment > details > .pb-0 > .flex').first()).toBeVisible();
+    await page.getByRole('button', { name: 'Toggle Comment Thread' }).first().click();
+    await expect(page.locator('.text-neutral-content-strong.bg-neutral-background').first()).toBeVisible();
+});
+
 test('search comments - search for "cat" and "car" and verify the results', async ({ page }) => {
     await page.goto(POST);
     await page.getByRole('button', { name: 'Search Comments Expand' }).click();
